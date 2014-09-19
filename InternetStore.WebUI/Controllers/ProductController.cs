@@ -4,18 +4,20 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using InternetStore.Domain.Abstract;
+using InternetStore.Domain.Entities;
 
 namespace InternetStore.WebUI.Controllers
 {
     public class ProductController : Controller
     {
-        //
-        // GET: /Product/
-
-        public ActionResult Index()
+        private IProductRepository repository;
+        public ProductController(IProductRepository productRepository)
         {
-            return View();
+            this.repository = productRepository;
         }
-
+        public ViewResult List()
+        {
+            return View(repository.Products);
+        }
     }
 }
