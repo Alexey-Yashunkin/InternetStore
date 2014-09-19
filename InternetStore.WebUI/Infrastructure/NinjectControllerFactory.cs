@@ -4,8 +4,8 @@ using System.Linq;
 using System.Web.Mvc;
 using System.Web.Routing;
 using Ninject;
-using InternetStore.domain.Entities;
-using InternetStore.domain.Abstract;
+using InternetStore.Domain.Entities;
+using InternetStore.Domain.Abstract;
 using Moq;
 
 namespace InternetStore.WebUI.Infrastructure

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using InternetStore.domain.Entities;
+using InternetStore.Domain.Entities;
 
-namespace InternetStore.domain.Abstract
+namespace InternetStore.Domain.Abstract
 {
     public interface IProductRepository
     {

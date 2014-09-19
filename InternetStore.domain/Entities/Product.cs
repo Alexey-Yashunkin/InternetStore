@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace InternetStore.domain.Entities
+namespace InternetStore.Domain.Entities
 {
     public class Product
     {
