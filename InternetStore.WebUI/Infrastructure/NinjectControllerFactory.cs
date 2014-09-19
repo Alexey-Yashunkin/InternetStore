@@ -4,6 +4,9 @@ using System.Linq;
 using System.Web.Mvc;
 using System.Web.Routing;
 using Ninject;
+using InternetStore.domain.Entities;
+using InternetStore.domain.Abstract;
+using Moq;
 
 namespace InternetStore.WebUI.Infrastructure
 {
@@ -21,7 +24,13 @@ namespace InternetStore.WebUI.Infrastructure
         }
         private void AddBindings()
         {
-            // Разместить привязки
+            Mock<IProductRepository> mock = new Mock<IProductRepository>();
+            mock.Setup(m => m.Products).Returns(new List<Product> {
+                new Product { Name = "Smartphone", Price = 100 },
+                new Product { Name = "NoteBook", Price = 350 },
+                new Product { Name = "Mp3 Pod", Price = 33 }
+            }.AsQueryable());
+            ninjectKernel.Bind<IProductRepository>().ToConstant(mock.Object);
         }
     }
 }
