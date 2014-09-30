@@ -7,6 +7,7 @@ using Ninject;
 using InternetStore.Domain.Entities;
 using InternetStore.Domain.Abstract;
 using Moq;
+using InternetStore.Domain.Concrete;
 
 namespace InternetStore.WebUI.Infrastructure
 {
@@ -24,13 +25,7 @@ namespace InternetStore.WebUI.Infrastructure
         }
         private void AddBindings()
         {
-            Mock<IProductRepository> mock = new Mock<IProductRepository>();
-            mock.Setup(m => m.Products).Returns(new List<Product> {
-                new Product { Name = "Smartphone", Price = 100 },
-                new Product { Name = "NoteBook", Price = 350 },
-                new Product { Name = "Mp3 Pod", Price = 33 }
-            }.AsQueryable());
-            ninjectKernel.Bind<IProductRepository>().ToConstant(mock.Object);
+            ninjectKernel.Bind<IProductRepository>().To<EFProductRepositiry>();
         }
     }
 }
