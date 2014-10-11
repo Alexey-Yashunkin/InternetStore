@@ -59,3 +59,78 @@ textarea {
 .validation-summary-valid {
     display: none;
 }
+
+
+
+body { 
+    font-family: Cambria,Georgia, "Times New Roman"; 
+    margin: 0;}
+div#header div.title, div.item H3, div.item H4, div.pager A { 
+    font: bold 1em "Arial Narrow", "Franklin Gothic Medium", Arial;}
+div#header {
+    background-color: #444;
+    border-bottom: 2px solid #111;
+    color: white;
+}
+div#header div.title {
+    font-size: 2em;
+    padding: .6em;}
+div#content {border-left: 2px solid gray; 
+             margin-left: 9em; 
+             padding: 1em}
+div#categories {float:left; 
+                width: 8em; 
+                padding: 5px;}
+div.item{ 
+    border-top: 1px dotted gray;
+    padding-top: .7em;
+    margin-bottom: .7em;
+}
+div.item :first-child { 
+    border-top: none;
+    padding-top: 0;
+}
+div.item H3 {
+        font-size: 1.3em;
+        margin: 0 0 .25em 0;
+}
+div.item H4 {
+    font-size: 1.4em;
+    margin: .4em 0 0 0;
+}
+div.paper {
+    text-align: right;
+    border-top: 2px solid silver;
+    padding: .5em 0 0 0; 
+    margin-top: 1em;
+}
+div.pager A {
+    font-size: 1.1em;
+    color: #666;
+    text-decoration: none;
+    padding: 0 .4em 0 .4em;
+}
+div.pager A:hover {background-color: silver;}
+div.pager A.selected {
+    background-color: #353535;
+    color: white;
+}
+div#categories A {
+    font: bold 1.1em "Arrial Narrow", "Franclin Gothic Medium", Arial;
+    display: block;
+    text-decoration: none;
+    padding: .6em;
+    color: black;
+    border-bottom: 1px solid silver;
+}
+div#categories A.selected {
+    background-color: #666;
+    color: white;
+}
+div#categories A:hover {
+    background-color: #ccc;
+}
+div#categories A.selected:hover {
+    background-color: #666;
+}
+
