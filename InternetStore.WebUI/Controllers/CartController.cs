@@ -58,5 +58,9 @@ namespace InternetStore.WebUI.Controllers
             });
         }
 
+        public PartialViewResult Summary(Cart cart)
+        {
+            return PartialView(cart);
+        }
     }
 }
