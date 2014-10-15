@@ -8,6 +8,7 @@ using InternetStore.Domain.Entities;
 using InternetStore.Domain.Abstract;
 using Moq;
 using InternetStore.Domain.Concrete;
+using System.Configuration;
 
 namespace InternetStore.WebUI.Infrastructure
 {
