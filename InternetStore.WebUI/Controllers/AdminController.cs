@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using InternetStore.Domain.Abstract;
+using InternetStore.Domain.Entities;
 
 namespace InternetStore.WebUI.Controllers
 {
@@ -14,10 +15,15 @@ namespace InternetStore.WebUI.Controllers
         {
             repository = repo;
         }
-        public ActionResult Index()
+        public ViewResult Index()
         {
             return View(repository.Products);
         }
 
+        public ViewResult Edit(int productID)
+        {
+            Product product = repository.Products.FirstOrDefault(p => p.ProductID == productID);
+            return View(product);
+        }
     }
 }
