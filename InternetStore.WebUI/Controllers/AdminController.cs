@@ -45,5 +45,16 @@ namespace InternetStore.WebUI.Controllers
         {
             return View("Edit", new Product());
         }
+
+        [HttpPost]
+        public ActionResult Delete(int productID)
+        {
+            Product deleteProduct = repository.DeleteProduct(productID);
+            if (deleteProduct != null)
+            {
+                TempData["message"] = string.Format("{0} was deleted", deleteProduct.Name);
+            }
+            return RedirectToAction("Index");
+        }
     }
 }
