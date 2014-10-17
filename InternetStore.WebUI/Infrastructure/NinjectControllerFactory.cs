@@ -9,6 +9,8 @@ using InternetStore.Domain.Abstract;
 using Moq;
 using InternetStore.Domain.Concrete;
 using System.Configuration;
+using InternetStore.WebUI.Infrastructure.Abstract;
+using InternetStore.WebUI.Infrastructure.Concrete;
 
 namespace InternetStore.WebUI.Infrastructure
 {
@@ -27,6 +29,7 @@ namespace InternetStore.WebUI.Infrastructure
         private void AddBindings()
         {
             ninjectKernel.Bind<IProductRepository>().To<EFProductRepositiry>();
+            ninjectKernel.Bind<IAuthProvider>().To<FormsAuthProvider>();
         }
     }
 }
