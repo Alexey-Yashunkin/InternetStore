@@ -37,6 +37,15 @@ namespace InternetStore.Domain.Entities
         {
             lineCollection.Clear();
         }
+        public List<Product> ListProducts()
+        {
+            List<Product> listProduct = new List<Product>();
+            foreach (CartLine cartLine in lineCollection)
+            {
+                listProduct.Add(cartLine.Product);
+            }
+            return listProduct;
+        }
 
         public IEnumerable<CartLine> Lines
         {

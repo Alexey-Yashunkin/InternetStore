@@ -1,0 +1,34 @@
+﻿@model InternetStore.Domain.Entities.Order
+
+@{
+    ViewBag.Title = "Your order";
+}
+
+<h1>Your Order #@Model.OrderID</h1>
+
+<table class="grid" width=" 150" align="center">
+    <thead>
+        <tr>
+            <th align="center">Date</th>
+            <th align="center">Payment</th>
+            <th align="center">Delivery</th>
+            <th align="center">PayStatus</th>
+            <th align="center">OrderStatus</th>
+            <th align="center">Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td align="center">@Model.StartDate</td>
+            <td align="center">@Model.Payment</td>
+            <td align="center">@Model.Delivery</td>
+            <td align="center">@Model.PayStatus</td>
+            <td align="center">@Model.OrderStatus</td>
+            <td align="center">@Model.TotalPrice</td>
+        </tr>
+    </tbody>
+</table>
+@if (Model.Payment == "PayCard" && Model.PayStatus != "Pay") 
+  {
+      @Html.ActionLink("Pay order now", "PayOrder", new { Model.OrderID, Model.Delivery }, new {@id = "paylink" });
+  }

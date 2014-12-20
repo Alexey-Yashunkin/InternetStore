@@ -1,0 +1,15 @@
+﻿@model InternetStore.Domain.Entities.Order
+
+@{
+    ViewBag.Title = "PayOrder";
+}
+<h2>PayOrder</h2>
+@using (Html.BeginForm())
+{
+   <div style="border:2px solid black;">Здесь будет окно оплаты</div>
+
+<input type="submit" value="Pay"/> 
+}
+
+
+

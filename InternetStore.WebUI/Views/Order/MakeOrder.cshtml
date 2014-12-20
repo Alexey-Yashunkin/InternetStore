@@ -1,0 +1,32 @@
+﻿@model InternetStore.Domain.Entities.Order
+
+
+@{
+    ViewBag.Title = "Makeout order";
+}
+
+<h2>Your order</h2>
+
+@using (Html.BeginForm())
+{
+    <div>
+        <p>Выберите способ олаты</p>
+        @Html.RadioButtonFor(x => x.Payment, "PayCard")Card
+        @Html.RadioButtonFor(x => x.Payment, "PayMoney")Money
+    </div>
+    <div>
+        <p>Выберите способ доставки</p>
+        @Html.RadioButtonFor(x => x.Delivery, "OneSelf")Shipment at own expense
+        @Html.RadioButtonFor(x => x.Delivery, "InHome")On the house
+    </div>
+    
+    
+    
+
+    <p><input type="submit" value="Add order" /></p>
+}
+
+
+
+
+    

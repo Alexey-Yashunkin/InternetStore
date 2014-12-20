@@ -11,6 +11,8 @@
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <description>Этот пакет содержит русские вспомогательные сборки для ASP.NET Web Pages 2.</description>
     <summary>Русские ресурсы для пакета Microsoft.AspNet.WebPages</summary>
+    <releaseNotes />
+    <copyright />
     <language>ru</language>
     <tags>Microsoft AspNet WebPages AspNetWebPages</tags>
     <dependencies>

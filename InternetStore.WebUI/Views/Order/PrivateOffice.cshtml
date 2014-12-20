@@ -1,0 +1,53 @@
+﻿@model IEnumerable<InternetStore.Domain.Entities.Order>
+@{
+    ViewBag.Title = "PrivateOffice";
+}
+
+<h2>PrivateOffice</h2>
+<h3>Your orders</h3>
+<table class="grid">
+    <tr>
+        <th align="center">ID</th>
+        <th align="center">Date</th>
+        <th align="center">Payment</th>
+        <th align="center">Delivery</th>
+        <th align="center">PayStatus</th>
+        <th align="center">OrderStatus</th>
+        <th align="center" class="numericcol">Price</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        if (item.UserID == WebSecurity.CurrentUserId)
+        {
+        <tr>
+            <td align="center">@Html.ActionLink(@item.OrderID.ToString(), "BuyerCart", new {@item.OrderID})</td>
+            <td align="center">@item.StartDate</td>
+            <td align="center">@item.Payment</td>
+            <td align="center">@item.Delivery</td>
+            <td align="center">@item.PayStatus</td>
+            <td align="center">@item.OrderStatus</td>
+            <td align="center">@item.TotalPrice</td>
+            <td align="center">
+                @using (Html.BeginForm("CancelOrder","Order"))
+                {
+                    @Html.Hidden("OrderID", item.OrderID)
+                    <input type="submit" value="Cancel"/>
+                }
+            </td>
+            <td align="center">
+                @if (item.PayStatus != "Pay" && item.Payment == "PayCard")
+                {
+                    @Html.ActionLink("Pay Order", "PayOrder", new { @item.OrderID }, new { @id = "paylink"});
+                }
+            </td>
+        </tr>
+
+        }
+    }
+</table>
+
+        <div style="border:2px,solid,grey">
+            <p></p>
+            @Html.ActionLink("Управление учетной записью","Manage","Account")
+        </div>

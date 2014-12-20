@@ -11,6 +11,8 @@
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <description>Этот пакет содержит русские вспомогательные сборки для ASP.NET Razor.</description>
     <summary>Русские ресурсы для пакета Microsoft.AspNet.Razor</summary>
+    <releaseNotes />
+    <copyright />
     <language>ru</language>
     <tags>Microsoft AspNet WebPages AspNetWebPages Razor</tags>
     <dependencies>

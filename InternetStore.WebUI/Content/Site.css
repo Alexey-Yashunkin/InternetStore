@@ -185,3 +185,105 @@ div#cart a {
     color: white;
     border: 1px solid black;
 }
+
+/* login
+----------------------------------------------------------*/
+secton#login {
+    float: right;
+    margin: .8em;
+    color: silver;
+    background-color: #555;
+    padding: .5em .5em .5em 1em;
+}
+
+div#loginForm {
+    float: right;
+    margin: .8em;
+    color: silver;
+    background-color: #555;
+    padding: .5em .5em .5em 1em;
+
+
+}
+
+div#loginForm form{
+        display: inline;
+        list-style: none;
+        line-height: 2.1em;
+        margin-left: .5em;
+        padding: .4em 1em .4em 1em;
+
+}
+
+    section#login a{
+        text-decoration: none;
+        padding: .4em 1em .4em 1em;
+        line-height: 2.1em;
+        margin-left: .5em;
+        background-color: #333;
+        color: white;
+        border: 1px solid black;
+    }
+
+    section#login ul {
+        float: right;
+        margin: .8em;
+        color: silver;
+        background-color: #555;
+        padding: .5em .5em .5em 1em;
+    }
+
+    section#login li {
+        display: inline;
+        list-style: none;
+    }
+
+    table.grid td, table.grid th {
+    border-bottom: 1px dotted gray;
+    text-align: left;
+}
+
+table.grid {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table.grid th.numericcol, table.grid td.numericcol {
+    text-align: left;
+    padding-right: 1em;
+}
+
+a#paylink {
+        text-decoration: none;
+        padding: .4em 1em .4em 1em;
+        line-height: 2.1em;
+        margin-left: .5em;
+        background-color: ButtonFace;
+        color: black;
+        border: 1px solid grey;
+}
+
+ol li input {
+    grid-row-align:center;
+    margin:5px;
+}
+
+
+fieldset input, textarea {
+    border: 1px solid #e2e2e2;
+    background: #fff;
+    color: #333;
+    font-size: 1.2em;
+    margin: 5px 0 6px 0;
+    padding: 5px;
+    width: 300px;
+}
+
+textarea {
+    font-family: inherit;
+    width: 500px;
+}
+
+    input:focus, textarea:focus {
+        border: 1px solid #7ac0da;
+    }

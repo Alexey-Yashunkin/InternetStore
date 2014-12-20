@@ -9,6 +9,10 @@ using System.Web.Optimization;
 using System.Web.Routing;
 using InternetStore.Domain.Entities;
 using InternetStore.WebUI.Binders;
+using System.Web.Security;
+using DotNetOpenAuth.AspNet;
+using Microsoft.Web.WebPages.OAuth;
+using WebMatrix.WebData;
 
 namespace InternetStore.WebUI
 {
@@ -28,6 +32,7 @@ namespace InternetStore.WebUI
 
             ControllerBuilder.Current.SetControllerFactory(new NinjectControllerFactory());
             ModelBinders.Binders.Add(typeof(Cart), new CartModelBinder());
+            WebSecurity.InitializeDatabaseConnection("EFDbContext", "Users", "UserId", "UserName", autoCreateTables: true);
         }
     }
 }

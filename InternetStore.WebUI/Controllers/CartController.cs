@@ -19,16 +19,6 @@ namespace InternetStore.WebUI.Controllers
         {
             repository = repo;
         }
-        private Cart GetCart()
-        {
-            Cart cart = (Cart)Session["Cart"];
-            if (cart == null)
-            {
-                cart = new Cart();
-                Session["Cart"] = cart;
-            }
-            return cart;
-        }
 
         public RedirectToRouteResult AddToCart(Cart cart, int productID, string returnUrl)
         {

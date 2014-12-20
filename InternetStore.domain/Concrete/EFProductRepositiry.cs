@@ -46,5 +46,6 @@ namespace InternetStore.Domain.Concrete
             }
             return dbEntry;
         }
+
     }
 }
