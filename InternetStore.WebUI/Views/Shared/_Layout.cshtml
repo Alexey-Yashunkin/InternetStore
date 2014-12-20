@@ -5,9 +5,13 @@
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
     <link href="~/Content/Site.css" type="text/css" rel="stylesheet" />
+    @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
     <div id="header">
+        <section id="login">
+            @Html.Partial("_LoginPartial")
+        </section>
         @{Html.RenderAction("Summary", "Cart");}
         <div class="title">INTERNET STORE</div>
     </div>
@@ -17,5 +21,7 @@
     <div id="content">
         @RenderBody()
     </div>
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
 </body>
 </html>

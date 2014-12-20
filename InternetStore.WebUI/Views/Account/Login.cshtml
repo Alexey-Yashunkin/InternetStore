@@ -1,18 +1,46 @@
-﻿@model InternetStore.WebUI.Models.LoginViewModel
+﻿@model InternetStore.WebUI.Models.LoginModel
 
 @{
-    ViewBag.Title = "Login";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewBag.Title = "Выполнить вход";
 }
 
-<h1>Log In</h1>
+<hgroup class="title">
+    <h1>@ViewBag.Title.</h1>
+</hgroup>
 
-<p>Please log in to access the administrative area:</p>
-@using (Html.BeginForm())
-{
+<section id="loginForm">
+<h2>Используйте для входа локальную учетную запись.</h2>
+@using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl })) {
+    @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
-    @Html.EditorForModel()
+
+    <fieldset>
+        <legend>Форма входа</legend>
+        <ol>
+            <li>
+                @Html.LabelFor(m => m.UserName)
+                @Html.TextBoxFor(m => m.UserName)
+                @Html.ValidationMessageFor(m => m.UserName)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.Password)
+                @Html.PasswordFor(m => m.Password)
+                @Html.ValidationMessageFor(m => m.Password)
+            </li>
+            <li>
+                @Html.CheckBoxFor(m => m.RememberMe)
+                @Html.LabelFor(m => m.RememberMe, new { @class = "checkbox" })
+            </li>
+        </ol>
+        <input type="submit" value="Выполнить вход" />
+    </fieldset>
     <p>
-        <input type="submit" value="Log in" />
+        @Html.ActionLink("Зарегистрируйтесь", "Register"), если у вас нет учетной записи.
     </p>
+}
+</section>
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
 }
